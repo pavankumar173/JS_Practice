@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse & Load Events</title>
+
+  <script>
+/**
+ * This function is called when the page is loaded.
+ * It updates the HTML content of the element with the id "msg" to "Page Loaded Successfully!".
+ */
+    function pageLoaded() {
+      document.getElementById("msg").innerHTML = "Page Loaded Successfully!";
+    }
+
+    /**
+     * Handle mouse over event.
+     * Changes the image source to image2.jpg
+     */
+    function mouseOver() {
+      // Change the image source to image2.jpg
+      document.getElementById("img").src = "image2.jpg";
+    }
+
+  /**
+   * Handle mouse out event.
+   * Changes the image source back to image1.jpg
+   */
+    function mouseOut() {
+      document.getElementById("img").src = "image1.jpg";
+    }
+  </script>
+</head>
+
+<body onload="pageLoaded()">
+
+  <h3 id="msg"></h3>
+
+  <img id="img"
+       src="image1.jpg"
+       width="200"
+       onmouseover="mouseOver()"
+       onmouseout="mouseOut()" />
+
+</body>
+</html>

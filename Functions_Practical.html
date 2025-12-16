@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Functions Demo</title>
+
+  <script type="text/javascript">
+/**
+ * Says hello to the user.
+ * @param {string} name - The user's name
+ * @param {number} age - The user's age
+ * @throws {Error} If either name or age is empty
+ */
+    function Sayhello(name, age) {
+      if (name === "" || age === "") {
+        alert("Please enter both name and age");
+        return;
+      }
+
+      document.getElementById("result").innerHTML =
+        name + " is " + age + " years old.";
+    }
+  </script>
+</head>
+
+<body>
+  <p>Know Your Age</p>
+
+  <form>
+    <input name="t1" placeholder="Enter Name" />
+    <input name="t2" placeholder="Enter Age" />
+    <input type="button" value="Click Me"
+           onclick="Sayhello(t1.value, t2.value)" />
+  </form>
+
+  <p id="result"></p>
+</body>
+</html>

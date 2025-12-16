@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Image Color Transition</title>
+<style>
+  #imgBox {
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
+    transition: all 0.5s ease; /* smooth transition */
+  }
+</style>
+</head>
+<body>
+
+<h3>Hover to Pause, Mouse Out to Resume</h3>
+
+<img id="imgBox" src="image1.jpg">
+
+<script>
+  const imgBox = document.getElementById("imgBox");
+  const images = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg"];
+  let i = 0;
+  let interval;
+
+  // Function to start image transition
+  function startTransition() {
+    interval = setInterval(() => {
+      i = (i + 1) % images.length;
+      imgBox.src = images[i];
+    }, 500); // change image every 500 milliseconds
+  }
+
+  // Function to stop transition
+  function stopTransition() {
+    clearInterval(interval);
+  }
+
+  // Events
+  imgBox.addEventListener("mouseover", stopTransition); // pause on hover
+  imgBox.addEventListener("mouseout", startTransition); // resume on mouse out
+
+  // Start transition on page load
+  startTransition();
+</script>
+
+</body>
+</html>
